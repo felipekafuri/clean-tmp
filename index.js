@@ -2,7 +2,8 @@ var fs = require('fs')
 var path = require('path')
 
 const timer =  1*3600*1000
-const tmpPath = path.resolve(__dirname, '..', 'anjo-animal-api', 'tmp')
+// const tmpPath = path.resolve(__dirname, '..', 'anjo-animal-api', 'tmp')
+const tmpPath = path.resolve(__dirname, 'tmp')
 
 
 rmDir = function(dirPath) {
@@ -19,4 +20,4 @@ rmDir = function(dirPath) {
 };
 
 
-setInterval(rmDir(tmpPath), timer);
+setInterval(function(){rmDir(tmpPath); console.log('tmp was cleaned')}, timer);
